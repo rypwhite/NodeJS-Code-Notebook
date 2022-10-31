@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/slate/bootstrap.min.css" integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">
+  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<style>
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+<body>
+    <div class="container-flex content">
+        <div class="jumbotron">
+            <h1 class="display-3 text-light"><span style="color: pink">Useful</span> Snippets</h1>
+            <hr>
+            <a href="/cpp" class="btn btn-dark w-100 mb-1">C++ Snippets</a>
+            <a href="/php" class="btn btn-dark w-100 mb-1">PHP Snippets</a>
+            <a href="/node" class="btn btn-dark w-100 mb-1">Node.js Snippets</a>
+            <hr>
+            <a href="/node" class="btn btn-dark w-100 mb-1" data-toggle="modal" data-target="#add">Add Snippet</a>
+            <small class="float-right pt-2">By Ryan White</small>
+        </div>
+    </div>
+
+    <div class="modal fade" id="add" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Snippet</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/add" method="POST">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" class="form-control" name="title" placeholder="Enter Title" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Contents</label>
+                            <textarea type="text" class="form-control" name="contents" placeholder="Enter Contents" rows=10 required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <select class="form-select form-select-lg pl-5 pr-5 p-2 text-large" name="language">
+                            <option value="cpp"selected >C++</option>
+                            <option value="php">PHP</option>
+                            <option value="node">Node</option>
+                          </select>
+                        <button type="submit" class="btn btn-success">Confirm</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
